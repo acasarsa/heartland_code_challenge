@@ -104,6 +104,8 @@ To run tests with Rspec. There should be 4 test examples.
 rspec
 ```
 
+For larger data sets I import from spec/support/mock_data.rb
+
 ## Thoughts and Comments
 
 Based on the criteria to 'focus on correctness' I chose to add some error handling but limited it to what I felt was high priority. Here's how I would prioritize edge cases if continuing this project:

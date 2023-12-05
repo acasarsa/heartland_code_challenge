@@ -17,6 +17,7 @@ class PhotoDataParser
 
     parsed_photos = data.split("\n").filter_map do |photo_info|
       parsed_line = parse_line(photo_info) # filter_map map removes nil values here if any found
+      next unless parsed_line
 
       filename, city, timestamp = parsed_line
       { filename:, city:, timestamp: }

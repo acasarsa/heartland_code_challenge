@@ -260,4 +260,25 @@ module MockData
     London099.jpg
     London100.jpg
   DATA
+
+  INCLUDES_INVALID_DATA = <<~DATA.chomp
+    photo.jpg, London, 2020-01-01 10:00:00
+    photo.jpg, London
+    , ,
+    invalid.jpg, London, invalid-date
+    invalid.jpg, London, invalid-date
+    invalid.jpg, London, invalid-date
+    invalid.jpg, London, invalid-date
+    invalid.jpg, London, invalid-date
+    invalid.jpg, London, invalid-date
+    invalid.jpg, London, invalid-date
+    invalid.jpg, London, invalid-date
+    valid.jpg, London, 2020-01-02 11:00:00
+    London, 2022-02-02 12:00:00
+  DATA
+
+  EXPECTED_OUTPUT_MIXED_INVALID = <<~DATA.chomp
+    London1.jpg
+    London2.jpg
+  DATA
 end
