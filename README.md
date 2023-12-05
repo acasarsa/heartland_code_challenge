@@ -103,3 +103,17 @@ To run tests with Rspec. There should be 4 test examples.
 ```
 rspec
 ```
+
+## Thoughts and Comments
+
+Based on the criteria to 'focus on correctness' I chose to add some error handling but limited it to what I felt was high priority. Here's how I would prioritize edge cases if continuing this project:
+
+```
+High Priority: Incorrect Date/Time Formats, Empty or Missing Data, Leading/Trailing Whitespaces, Empty File.
+Medium Priority: Unsupported File Extensions, Line Breaks and Encoding Issues, Length of M
+Low Priority: Duplicate Timestamps within a City (based on challenge assumptions).
+```
+
+I chose a stateless utility class because the nature of the challenge did not require handling of state changes or creating instances. I still preferred to use a class over a simple method script for readability and follow the single responsibility principle.
+
+If this project were to grow I would want to reevaluate the file naming convention to allow for better time complexity. I would also want to add a Photo class and a database to store the rest of the photo info and to allow for other listing options.
