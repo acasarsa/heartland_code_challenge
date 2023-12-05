@@ -59,6 +59,3 @@ class PhotoDataParser
   end
   private_class_method :calculate_group_sizes
 end
-
-# puts PhotoDataParser.parse(MockData::INPUT_DATA).inspect
-puts PhotoDataParser.list_reformatted_filenames(MockData::INPUT_DATA)
