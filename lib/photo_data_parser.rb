@@ -1,6 +1,7 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'date'
+require_relative '../spec/support/mock_data'
 
 # PhotoDataParser is a stateless utility class responsible for parsing a string of photo data.
 # It provides functionality to reformat filenames based on city and timestamp,
@@ -10,7 +11,7 @@ require 'date'
 class PhotoDataParser
   # Parses the raw photo data string and returns an array of photo hashes.
   # @param data [String] the raw photo data as a newline-separated string.
-  # @return [Array<Hash>] an array of photo hashes with filename, city, and timestamp.
+  # @return [Array<Hash>] an array of photo hashes with new filename, city, and timestamp.
   def self.parse(data)
     parsed_photos = data.split("\n").map do |photo_info|
       filename, city, timestamp = photo_info.split(', ')
@@ -30,7 +31,7 @@ class PhotoDataParser
   # Generates a string of reformatted filenames, each on a new line.
   # @param data [String] the raw photo data as a newline-separated string.
   # @return [String] a string of reformatted filenames, separated by newlines.
-  def self.list_reformated_filenames(data)
+  def self.list_reformatted_filenames(data)
     parsed_photos = parse(data)
     parsed_photos.map { |photo| photo[:filename] }.join("\n")
   end
@@ -59,20 +60,5 @@ class PhotoDataParser
   private_class_method :calculate_group_sizes
 end
 
-sample_data = "photo.jpg, Krakow, 2013-09-05 14:08:15
-Mike.png, London, 2015-06-20 15:13:22
-myFriends.png, Krakow, 2013-09-05 14:07:13
-Eiffel.jpg, Florianopolis, 2015-07-23 08:03:02
-pisatower.jpg, Florianopolis, 2015-07-22 23:59:59
-BOB.jpg, London, 2015-08-05 00:02:03
-notredame.png, Florianopolis, 2015-09-01 12:00:00
-me.jpg, Krakow, 2013-09-06 15:40:22
-a.png, Krakow, 2016-02-13 13:33:50
-b.jpg, Krakow, 2016-01-02 15:12:22
-c.jpg, Krakow, 2016-01-02 14:34:30
-d.jpg, Krakow, 2016-01-02 15:15:01
-e.png, Krakow, 2016-01-02 09:49:09
-f.png, Krakow, 2016-01-02 10:55:32
-g.jpg, Krakow, 2016-02-29 22:13:11"
-
-puts PhotoDataParser.list_reformated_filenames(sample_data)
+# puts PhotoDataParser.parse(MockData::INPUT_DATA).inspect
+puts PhotoDataParser.list_reformatted_filenames(MockData::INPUT_DATA)
