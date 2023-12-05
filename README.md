@@ -108,14 +108,14 @@ For larger data sets I import from spec/support/mock_data.rb
 
 ## Thoughts and Comments
 
-Based on the criteria to 'focus on correctness' I chose to add some error handling but limited it to what I felt was high priority. Here's how I would prioritize edge cases if continuing this project:
+Throughout this coding challenge, I focused on achieving 'correctness' as a primary goal. To this end, I implemented error handling that I deemed high-priority, based on the challenge's requirements and the realistic scenarios the application might encounter. My approach to prioritizing edge cases was as follows:
 
-```
-High Priority: Incorrect Date/Time Formats, Empty or Missing Data, Leading/Trailing Whitespaces, Empty File.
-Medium Priority: Unsupported File Extensions, Line Breaks and Encoding Issues, Length of M
-Low Priority: Duplicate Timestamps within a City (based on challenge assumptions).
-```
+**High Priority:** Incorrect Date/Time Formats, Empty or Missing Data, Leading/Trailing Whitespaces, Empty File.
 
-I chose a stateless utility class because the nature of the challenge did not require handling of state changes or creating instances. I still preferred to use a class over a simple method script for readability and follow the single responsibility principle.
+**Medium Priority:** Unsupported File Extensions, Line Breaks and Encoding Issues, Length of M.
 
-If this project were to grow I would want to reevaluate the file naming convention to allow for better time complexity. I would also want to add a Photo class and a database to store the rest of the photo info and to allow for other listing options.
+**Low Priority:** Duplicate Timestamps within a City (considered unlikely based on challenge assumptions).
+
+Engaging with this challenge was a highly enriching experience. It was an opportunity to deepen my understanding of Ruby's capabilities and to apply best practices in software development. I particularly appreciated the balance between practical problem-solving and exploring more abstract programming concepts. I enjoyed the chance to enhance my skills in crafting thoughtful and well-structured code.
+
+Looking ahead, there are several areas where the project could evolve. For instance, reevaluating the file naming logic for greater efficiency and scalability would be an important consideration, especially if the volume of photo data increases significantly. Additionally, introducing a Photo class and integrating a database could open up possibilities for more sophisticated data handling, such as advanced sorting, filtering, and querying capabilities. These enhancements would not only add depth to the application but also make it more versatile and adaptable to a range of scenarios.
